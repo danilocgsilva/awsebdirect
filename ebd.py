@@ -14,9 +14,11 @@ for environment in response['Environments']:
     ebWrapper = EbWrapper()
     ebWrapper.set_eb_raw_json_data(environment)
 
+    print('')
     print('--- ENVIRONMENT NAME: ' + ebWrapper.get_environment_name() + ' ---')
     print("Application name: " + ebWrapper.get_environment_name())
     print("Environment url: " + ebWrapper.get_environment_url())
 
 print("")
 print("The data has been fetched from the region " + awsregion + ".")
+print("")
