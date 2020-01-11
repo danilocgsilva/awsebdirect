@@ -19,3 +19,7 @@ class EbWrapper:
 
     def get_environment_url(self):
         return self.eb_raw_json_data['CNAME']
+
+
+    def get_date_created(self):
+        return self.eb_raw_json_data['DateCreated']

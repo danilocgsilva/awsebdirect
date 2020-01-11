@@ -1,4 +1,2 @@
 .vscode/settings.json
-objs/__pycache__/Arguments.cpython-38.pyc
-objs/__pycache__/EbWrapper.cpython-38.pyc
-objs/__pycache__/Environment.cpython-38.pyc
+objs/__pycache__
