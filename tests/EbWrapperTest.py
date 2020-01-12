@@ -36,6 +36,14 @@ class EbWrapperTest(unittest.TestCase):
         )
 
 
+    def testGetEnvironmentId(self):
+        self.ebWrapper.set_eb_raw_json_data(raw_environment_data)
+        self.assertEqual(
+            self.ebWrapper.get_environment_id(),
+            "e-zy5vs3mjcm"
+        )
+
+
     def testSetEbRawJsonData(self):
         with self.assertRaises(TypeError):
             self.ebWrapper.set_eb_raw_json_data("It is not a dict")

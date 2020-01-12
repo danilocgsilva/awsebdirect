@@ -20,3 +20,6 @@ class EbWrapper:
     def get_environment_url(self):
         return self.eb_raw_json_data['CNAME']
 
+
+    def get_environment_id(self):
+        return self.eb_raw_json_data['EnvironmentId']

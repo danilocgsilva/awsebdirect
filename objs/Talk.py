@@ -6,6 +6,7 @@ class Talk:
         print('--- ENVIRONMENT NAME: ' + ebWrapper.get_environment_name() + ' ---')
         print("Application name: " + ebWrapper.get_environment_name())
         print("Environment url: " + ebWrapper.get_environment_url())
+        print("Environment id: " + ebWrapper.get_environment_id())
         print("Region: " + awsregion)
 
     def show_environments_in_region(self, region: str, counted: int):
