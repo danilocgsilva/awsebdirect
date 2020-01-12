@@ -4,16 +4,16 @@ from raw_environment_data import raw_environment_data
 sys.path.append("..")
 from objs.EbWrapper import EbWrapper
 
-class GetInfoFromObjectTest(unittest.TestCase):
 
+class EbWrapperTest(unittest.TestCase):
 
     def __init__(self, *args, **kwargs):
-        super(GetInfoFromObjectTest, self).__init__(*args, **kwargs)
+        super(EbWrapperTest, self).__init__(*args, **kwargs)
         self.ebWrapper = EbWrapper()
-        self.ebWrapper.set_eb_raw_json_data(raw_environment_data)
 
 
     def testGetEnvironemntNameFromRawEbData(self):
+        self.ebWrapper.set_eb_raw_json_data(raw_environment_data)
         self.assertEqual(
             self.ebWrapper.get_environment_name(), 
             "danilocgsilva-me-producao-b"
@@ -21,6 +21,7 @@ class GetInfoFromObjectTest(unittest.TestCase):
 
 
     def testeGetApplicationNameFromRawEbData(self):
+        self.ebWrapper.set_eb_raw_json_data(raw_environment_data)
         self.assertEqual(
             self.ebWrapper.get_application_name(),
             "danilocgsilva.me"
@@ -28,10 +29,17 @@ class GetInfoFromObjectTest(unittest.TestCase):
 
 
     def testGetEnvironmentUrlFromRawEbData(self):
+        self.ebWrapper.set_eb_raw_json_data(raw_environment_data)
         self.assertEqual(
             self.ebWrapper.get_environment_url(),
             "danilocgsilva-me-producao-b.us-east-1.elasticbeanstalk.com"
         )
+
+
+    def testSetEbRawJsonData(self):
+        with self.assertRaises(TypeError):
+            self.ebWrapper.set_eb_raw_json_data("It is not a dict")
+
 
 if __name__ == '__main__':
     unittest.main()

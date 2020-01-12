@@ -8,7 +8,7 @@ class Business:
 
         self.__get_data_from_region__(awsregion)
 
-        for eb_env_data in self.region_response:
+        for eb_env_data in self.region_response['Environments']:
             ebWrapper = EbWrapper()
             ebWrapper.set_eb_raw_json_data(eb_env_data)
             talk = Talk()

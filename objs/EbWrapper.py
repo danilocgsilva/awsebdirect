@@ -1,12 +1,12 @@
 class EbWrapper:
 
-    def set_eb_raw_json_data(self, eb_raw_json_data):
+    def set_eb_raw_json_data(self, eb_raw_json_data: dict):
+
+        if not type(eb_raw_json_data).__name__ == 'dict':
+            raise TypeError('The entered data must be of type dict')
+
         self.eb_raw_json_data = eb_raw_json_data
         return self
-
-
-    def get_eb_raw_json_data(self):
-        return self.eb_raw_json_data
 
 
     def get_environment_name(self):
@@ -19,7 +19,3 @@ class EbWrapper:
 
     def get_environment_url(self):
         return self.eb_raw_json_data['CNAME']
-
-
-    def get_date_created(self):
-        return self.eb_raw_json_data['DateCreated']
