@@ -9,10 +9,10 @@ awsregion = environment.get_region()
 eb = boto3.client('elasticbeanstalk', awsregion)
 response = eb.describe_environments()
 
-for environment in response['Environments']:
+for eb_env_data in response['Environments']:
     
     ebWrapper = EbWrapper()
-    ebWrapper.set_eb_raw_json_data(environment)
+    ebWrapper.set_eb_raw_json_data(eb_env_data)
 
     print('')
     print('--- ENVIRONMENT NAME: ' + ebWrapper.get_environment_name() + ' ---')
