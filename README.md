@@ -7,7 +7,7 @@ Without installing:
 ```
 python3 ebd.py count
 ```
-Them will count the available environments (still not working)
+Them will count the available environments, showing the count in each region.
 
 ```
 python3 ebd.py count_apps

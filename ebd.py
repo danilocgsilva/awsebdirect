@@ -1,5 +1,5 @@
 from objs.Arguments import Arguments
-from commands import infos
+from commands import infos, count
 import sys
 
 arguments = Arguments()
@@ -9,6 +9,4 @@ if not arguments.were_provided():
     exit()
 
 getattr(sys.modules[__name__], arguments.get_argument())()
-
-
 

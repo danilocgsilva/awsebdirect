@@ -14,6 +14,11 @@ class Business:
             talk = Talk()
             talk.show_data(ebWrapper, awsregion)
 
+
+    def set_region(self, region: str):
+        self.region = region
+        return self
+
     
     def __get_data_from_region__(self, region):
         ebClient = boto3.client('elasticbeanstalk', region)
