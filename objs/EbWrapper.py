@@ -23,3 +23,7 @@ class EbWrapper:
 
     def get_environment_id(self):
         return self.eb_raw_json_data['EnvironmentId']
+
+
+    def get_status(self):
+        return self.eb_raw_json_data['Status']
