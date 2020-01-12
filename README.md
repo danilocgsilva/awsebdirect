@@ -17,4 +17,4 @@ Them will count the number of available applications (still not working)
 ```
 python3 ebd.py infos
 ```
-May display informations from each environment, as region, containing application and instance size. (still not working, sorry again...)
+May display informations from each environment, as region, containing application and instance size.

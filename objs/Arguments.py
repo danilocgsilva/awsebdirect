@@ -11,3 +11,9 @@ class Arguments:
 
     def get_argument(self):
         return self.argument
+
+
+    def were_provided(self):
+        if self.argument == '':
+            return False
+        return True

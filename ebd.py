@@ -1,24 +1,14 @@
 from objs.Arguments import Arguments
-from objs.Environment import Environment
-from objs.EbWrapper import EbWrapper
-import boto3
+from commands import infos
+import sys
 
 arguments = Arguments()
-environment = Environment()
-awsregion = environment.get_region()
-eb = boto3.client('elasticbeanstalk', awsregion)
-response = eb.describe_environments()
 
-for eb_env_data in response['Environments']:
-    
-    ebWrapper = EbWrapper()
-    ebWrapper.set_eb_raw_json_data(eb_env_data)
+if not arguments.were_provided():
+    print("No argument provided. Sorry")
+    exit()
 
-    print('')
-    print('--- ENVIRONMENT NAME: ' + ebWrapper.get_environment_name() + ' ---')
-    print("Application name: " + ebWrapper.get_environment_name())
-    print("Environment url: " + ebWrapper.get_environment_url())
+getattr(sys.modules[__name__], arguments.get_argument())()
 
-print("")
-print("The data has been fetched from the region " + awsregion + ".")
-print("")
+
+
